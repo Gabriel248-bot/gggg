@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário base. </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-image: url(c:\Users\Maria\Downloads\formulario lanche.jfif);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #add-item {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+    .item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+}
+
+        #metodo-pagamento {
+        color: grey;
+    }
+
+    #metodo-pagamento option {
+        color: black; 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Lanchonete da sorte &#x1F340;</h2>
+        <form id="order-form">
+
+            <div class="cardapio";background-color:#ffffe0>
+                <h4>Cardápio</h4>
+                <ul>
+                    <li><strong>X-Burger</strong> - Pão, carne, queijo, alface, tomate e maionese --R$10,00</li>
+                    <li><strong>X-Salada</strong> - Pão, carne, queijo, alface, tomate, maionese e milho --R$11,00</li>
+                    <li><strong>X-Bacon</strong> - Pão, carne, queijo, bacon, alface, tomate e maionese --12,00</li>
+                    <li><strong>X-Frango</strong> - Pão, frango desfiado, queijo, alface, tomate e maionese --R$13,00</li>
+                    <li><strong>X-Calabresa</strong> - Pão, calabresa, queijo, alface, tomate e maionese --R$14,00</li>
+                    <li><strong>X-Egg</strong> - Pão, carne, queijo, ovo, alface, tomate e maionese --R$15,00</li>
+                    <li><strong>X-Tudo</strong> - Pão, carne, queijo, bacon, frango desfiado, calabresa, ovo, alface, tomate e maionese --R$16,00</li>
+                </ul>
+                <h4>Bebidas</h4>
+                <ul>
+                    <li><strong>Pepsi 2l</strong> --R$10,00</li>
+                    <li><strong>CocaCola 2l</strong> --R$11,00</li>
+                    <li><strong>Guaraná  2l</strong> --9,00</li>
+                    <li><strong>Guaravita</strong> --R$2,00</li>
+                    <li><strong>CocaCola 350ml</strong> --R$6,00</li>
+                    <li><strong>Guaraná 350ml</strong> --R$6,00</li>
+                    <li><strong>Pepsi 350ml</strong> --R$6,00</li>
+                </ul>
+            </div>
+            <h3><center>Agora, faça seu pedido!</center></h3>
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <fieldset id="itens-pedido">
+                <legend>Itens do Pedido:</legend>
+                <div class="item">
+                    <label for="nome-lanche">Diga seu lanche:</label>
+                    <input type="text" id="nome-lanche" name="nome-lanche[]">
+
+                    <label for="quantidade-lanche">Quantidade:</label>
+                    <input type="number" id="quantidade-lanche" name="quantidade-lanche[]" min="1" required>
+
+                    <label for="nome-bebida">Diga sua bebida:</label>
+                    <input type="text" id="nome-bebida" name="nome-bebida[]">
+
+                    <label for="quantidade-bebida">Quantidade:</label>
+                    <input type="number" id="quantidade-bebida" name="quantidade-bebida[]" min="1" required>
+
+                    <label for="observacoes-lanche">Observações:</label>
+                    <input type="text" id="observacoes-lanche" name="observacoes-lanche[]">
+                </div>
+            </fieldset>
+<br>
+            <button type="button" id="add-item">Adicionar mais itens</button>
+
+<script>
+    document.getElementById('add-item').addEventListener('click', function() {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item';
+        itemDiv.innerHTML = `
+            <label for="nome-lanche">Diga seu lanche:</label>
+            <input type="text" id="nome-lanche" name="nome-lanche[]">
+
+            <label for="quantidade-lanche">Quantidade:</label>
+            <input type="number" id="quantidade-lanche" name="quantidade-lanche[]" min="1" required>
+
+            <label for="nome-bebida">Diga sua bebida:</label>
+            <input type="text" id="nome-bebida" name="nome-bebida[]">
+
+            <label for="quantidade-bebida">Quantidade:</label>
+            <input type="number" id="quantidade-bebida" name="quantidade-bebida[]" min="1" required>
+
+            <label for="observacoes-lanche">Observações:</label>
+            <input type="text" id="observacoes-lanche" name="observacoes-lanche[]">
+        `;
+        document.getElementById('itens-pedido').appendChild(itemDiv);
+    });
+</script>
+
+                <label for="metodo-pagamento">Método de Pagamento:</label>
+                <select id="metodo-pagamento" name="metodo-pagamento" required>
+                    <option value="" disabled selected hidden>Selecione a forma de pagamento</option>
+                    <option value="pix">Pix</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="cartao">Cartão</option>
+                </select>
+                
+
+
+                <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+</body>
